@@ -1,0 +1,54 @@
+
+The Flask server will start and listen on https://azurewebsite.vercel.app/.
+
+->>>Testing API on Postman:
+
+    1. Testing the /simulate-function Endpoint:
+
+        ->>select the POST method:
+            
+            ->Enter the URL: http://127.0.0.1:5000/simulate-function. (Test on LocalHost)
+            ->Enter the URL: https://azurewebsite.vercel.app/simulate-function. (Test on Server)
+
+
+        ->>Add JSON Body:
+            ->open “Body” tab.
+
+            ->Select “raw” and choose “JSON” :
+            
+            ->Enter the following JSON body:
+                {
+                     "input": "sample data" 
+                }  
+
+            ->Click the “Send” button.
+
+            -> Response will be:
+                {
+                    "result": "Processed: sample data"
+                }
+
+    2. Testing the /simulate-function Endpoint:
+
+        ->>select the POST method:
+
+            ->Enter the URL: http://127.0.0.1:5000/simulate-logic-app. (Test on LocalHost)
+            ->Enter the URL: https://azurewebsite.vercel.app/simulate-logic-app. (Test on Server)
+
+        ->>Add JSON Body:
+            ->open “Body” tab.
+
+            ->Select “raw” and choose “JSON” :
+            
+            ->Enter the following JSON body:
+                {
+                    "trigger": "start"
+                }
+
+            ->Click the “Send” button.
+
+            -> Response will be:
+            
+                {
+                    "status": "Triggered" or "Not Triggered"
+                }           
